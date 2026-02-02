@@ -1,0 +1,556 @@
+#!/bin/bash
+
+# 创建Xcode项目的完整脚本
+
+PROJECT_DIR="/Users/armstrong/code/github/FamilyCalendarApp"
+PROJECT_NAME="FamilyCalendar"
+BUNDLE_ID="com.familycalendar.app"
+
+cd "$PROJECT_DIR"
+
+echo "=========================================="
+echo "  创建 Xcode 项目"
+echo "=========================================="
+echo ""
+
+# 创建必要的目录
+mkdir -p "$PROJECT_NAME.xcodeproj"
+
+# 创建项目配置文件
+cat > "$PROJECT_NAME.xcodeproj/project.pbxproj" << 'EOF'
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		APP_FILE_1 /* FamilyCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_1; };
+		APP_FILE_2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_2; };
+		APP_FILE_3 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_3; };
+		APP_FILE_4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_4; };
+		APP_FILE_5 /* EventParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_5; };
+		APP_FILE_6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_6; };
+		APP_FILE_7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_7; };
+		APP_FILE_8 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_8; };
+		APP_FILE_9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_9; };
+		APP_FILE_10 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_10; };
+		APP_FILE_11 /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_11; };
+		APP_FILE_12 /* FamilyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_12; };
+		APP_FILE_13 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_13; };
+		APP_FILE_14 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_14; };
+		APP_FILE_15 /* EventDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_15; };
+		APP_FILE_16 /* CreateEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_16; };
+		APP_FILE_17 /* FamilyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_17; };
+		APP_FILE_18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_18; };
+		APP_FILE_19 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_19; };
+		APP_FILE_20 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_20; };
+		APP_FILE_21 /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_21; };
+		APP_FILE_22 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_22; };
+		APP_FILE_23 /* FamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_23; };
+		APP_FILE_24 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_24; };
+		APP_FILE_25 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_25; };
+		APP_FILE_26 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_26; };
+		APP_FILE_27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_27; };
+		APP_FILE_28 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_28; };
+		APP_FILE_29 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FILE_29; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		PROJECT_REF /* FamilyCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FamilyCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		INFO_PLIST /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FILE_1 /* FamilyCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyCalendarApp.swift; sourceTree = "<group>"; };
+		FILE_2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FILE_3 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		FILE_4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FILE_5 /* EventParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipant.swift; sourceTree = "<group>"; };
+		FILE_6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FILE_7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		FILE_8 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		FILE_9 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		FILE_10 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FILE_11 /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
+		FILE_12 /* FamilyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyRepository.swift; sourceTree = "<group>"; };
+		FILE_13 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		FILE_14 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		FILE_15 /* EventDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewModel.swift; sourceTree = "<group>"; };
+		FILE_16 /* CreateEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewModel.swift; sourceTree = "<group>"; };
+		FILE_17 /* FamilyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyViewModel.swift; sourceTree = "<group>"; };
+		FILE_18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FILE_19 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		FILE_20 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		FILE_21 /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		FILE_22 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		FILE_23 /* FamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyView.swift; sourceTree = "<group>"; };
+		FILE_24 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FILE_25 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FILE_26 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FILE_27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FILE_28 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FILE_29 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		PBXFrameworksBuildPhase /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		GROUP_ROOT = {
+			isa = PBXGroup;
+			children = (
+				GROUP_FAMILYCALENDAR,
+				GROUP_PRODUCTS,
+			);
+			sourceTree = "<group>";
+		};
+		GROUP_FAMILYCALENDAR = {
+			isa = PBXGroup;
+			children = (
+				GROUP_APP,
+				GROUP_MODELS,
+				GROUP_VIEWS,
+				GROUP_VIEWMODELS,
+				GROUP_SERVICES,
+				GROUP_REPOSITORIES,
+				GROUP_UTILS,
+				GROUP_RESOURCES,
+			);
+			path = FamilyCalendar;
+			sourceTree = "<group>";
+		};
+		GROUP_APP = {
+			isa = PBXGroup;
+			children = (
+				FILE_1,
+			);
+			path = ".";
+			sourceTree = "<group>";
+		};
+		GROUP_MODELS = {
+			isa = PBXGroup;
+			children = (
+				FILE_2,
+				FILE_3,
+				FILE_4,
+				FILE_5,
+				FILE_6,
+				FILE_7,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		GROUP_SERVICES = {
+			isa = PBXGroup;
+			children = (
+				FILE_8,
+				FILE_9,
+				FILE_10,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		GROUP_REPOSITORIES = {
+			isa = PBXGroup;
+			children = (
+				FILE_11,
+				FILE_12,
+				FILE_13,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		GROUP_VIEWMODELS = {
+			isa = PBXGroup;
+			children = (
+				FILE_14,
+				FILE_15,
+				FILE_16,
+				FILE_17,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		GROUP_VIEWS = {
+			isa = PBXGroup;
+			children = (
+				FILE_18,
+				FILE_19,
+				FILE_20,
+				FILE_21,
+				FILE_22,
+				FILE_23,
+				FILE_24,
+				FILE_25,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		GROUP_UTILS = {
+			isa = PBXGroup;
+			children = (
+				FILE_26,
+				FILE_27,
+				FILE_28,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		GROUP_RESOURCES = {
+			isa = PBXGroup;
+			children = (
+				FILE_29,
+				INFO_PLIST,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		GROUP_PRODUCTS = {
+			isa = PBXGroup;
+			children = (
+				PROJECT_REF,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		TARGET_APP /* FamilyCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BUILD_CONFIG_LIST /* Build configuration list for PBXNativeTarget "FamilyCalendar" */;
+			buildPhases = (
+				PBXSourcesBuildPhase /* Sources */,
+				PBXFrameworksBuildPhase /* Frameworks */,
+				PBXResourcesBuildPhase /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FamilyCalendar;
+			productName = FamilyCalendar;
+			productReference = PROJECT_REF;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT_ROOT /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					TARGET_APP = {
+						CreatedOnToolsVersion = 15.0;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BUILD_CONFIG_LIST_PROJECT /* Build configuration list for PBXProject "FamilyCalendar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = zh_CN;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				zh-Hans,
+			);
+			mainGroup = GROUP_ROOT;
+			productRefGroup = GROUP_PRODUCTS;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				TARGET_APP,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		PBXResourcesBuildPhase /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		PBXSourcesBuildPhase /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				APP_FILE_1,
+				APP_FILE_2,
+				APP_FILE_3,
+				APP_FILE_4,
+				APP_FILE_5,
+				APP_FILE_6,
+				APP_FILE_7,
+				APP_FILE_8,
+				APP_FILE_9,
+				APP_FILE_10,
+				APP_FILE_11,
+				APP_FILE_12,
+				APP_FILE_13,
+				APP_FILE_14,
+				APP_FILE_15,
+				APP_FILE_16,
+				APP_FILE_17,
+				APP_FILE_18,
+				APP_FILE_19,
+				APP_FILE_20,
+				APP_FILE_21,
+				APP_FILE_22,
+				APP_FILE_23,
+				APP_FILE_24,
+				APP_FILE_25,
+				APP_FILE_26,
+				APP_FILE_27,
+				APP_FILE_28,
+				APP_FILE_29,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DEBUG_CONFIG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		RELEASE_CONFIG /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEBUG_CONFIG_TARGET /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FamilyCalendar/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.familycalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		RELEASE_CONFIG_TARGET /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FamilyCalendar/Resources/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.familycalendar.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BUILD_CONFIG_LIST_PROJECT /* Build configuration list for PBXProject "FamilyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBUG_CONFIG /* Debug */,
+				RELEASE_CONFIG /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BUILD_CONFIG_LIST /* Build configuration list for PBXNativeTarget "FamilyCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBUG_CONFIG_TARGET /* Debug */,
+				RELEASE_CONFIG_TARGET /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PROJECT_ROOT /* Project object */;
+}
+EOF
+
+echo "✓ Xcode 项目文件已创建"
+echo ""
+echo "=========================================="
+echo "  项目配置完成！"
+echo "=========================================="
+echo ""
+echo "下一步："
+echo "1. 打开 Xcode:"
+echo "   open FamilyCalendar.xcodeproj"
+echo ""
+echo "2. 在 Xcode 中:"
+echo "   - 选择开发团队 (Signing & Capabilities)"
+echo "   - 选择模拟器 (如 iPhone 15)"
+echo "   - 点击 Run 按钮 (▶️)"
+echo ""
+echo "=========================================="
