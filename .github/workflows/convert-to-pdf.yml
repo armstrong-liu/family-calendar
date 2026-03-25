@@ -1,0 +1,25 @@
+  name: Convert Markdown to PDF
+
+  on:
+    workflow_dispatch:
+    push:
+      paths:
+        - 'custore_spdk_optimization_design.md'
+
+  jobs:
+    convert:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Convert to PDF
+          uses: thaihuynh991/markdown-to-pdf-action@main
+          with:
+            input_files: custore_spdk_optimization_design.md
+            output_dir: output
+
+        - name: Upload PDF
+          uses: actions/upload-artifact@v3
+          with:
+            name: PDF
+            path: output/custore_spdk_optimization_design.pdf
